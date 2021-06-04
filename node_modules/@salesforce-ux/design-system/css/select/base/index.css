@@ -1,0 +1,100 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-select {
+  height: calc(1.875rem + (1px * 2));
+  width: 100%;
+  border: 1px solid var(--sds-c-select-color-border, #dddbda);
+  border-radius: var(--sds-c-select-radius-border, 0.25rem);
+  background-color: var(--sds-c-select-color-background, white);
+  color: var(--sds-c-select-text-color);
+  -webkit-box-shadow: var(--sds-c-select-shadow);
+  box-shadow: var(--sds-c-select-shadow);
+  -webkit-transition: border 0.1s linear, background-color 0.1s linear;
+  transition: border 0.1s linear, background-color 0.1s linear;
+}
+.slds-select:required {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.slds-select:focus,
+.slds-select:active {
+  outline: 0;
+  border-color: var(--sds-c-select-color-border-focus, #1b96ff);
+  background-color: var(--sds-c-select-color-background-focus, white);
+  color: var(--sds-c-select-text-color-focus);
+  -webkit-box-shadow: var(--sds-c-select-shadow-focus, 0 0 3px #0176d3);
+  box-shadow: var(--sds-c-select-shadow-focus, 0 0 3px #0176d3);
+}
+.slds-select[disabled],
+.slds-select.slds-is-disabled {
+  background-color: #ecebea;
+  border-color: #c9c7c5;
+  color: #3e3e3c;
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+}
+.slds-select[disabled]:focus,
+.slds-select[disabled]:active,
+.slds-select.slds-is-disabled:focus,
+.slds-select.slds-is-disabled:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.slds-select[size],
+.slds-select[multiple] {
+  min-height: calc(1.875rem + (1px * 2));
+  height: inherit;
+}
+.slds-select[size] option,
+.slds-select[multiple] option {
+  padding: 0.5rem;
+}
+.slds-select_container {
+  position: relative;
+  color: var(--sds-c-select-text-color);
+}
+.slds-select_container .slds-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+}
+.slds-select_container .slds-select::-ms-expand {
+  display: none;
+}
+.slds-select_container:before,
+.slds-select_container:after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  pointer-events: none;
+}
+.slds-select_container:before {
+  border-bottom: 5px solid currentColor;
+  top: calc((1.75rem / 2) - 6px);
+}
+.slds-select_container:after {
+  border-top: 5px solid currentColor;
+  bottom: calc((1.75rem / 2) - 6px);
+}
+
+.slds-has-error .slds-select {
+  border-color: #ea001e;
+  -webkit-box-shadow: #ea001e 0 0 0 1px inset;
+  box-shadow: #ea001e 0 0 0 1px inset;
+  background-clip: padding-box;
+}
+.slds-has-error .slds-select:focus,
+.slds-has-error .slds-select:active {
+  -webkit-box-shadow: #ea001e 0 0 0 1px inset, 0 0 3px #0176d3;
+  box-shadow: #ea001e 0 0 0 1px inset, 0 0 3px #0176d3;
+}

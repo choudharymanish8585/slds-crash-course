@@ -1,0 +1,55 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-badge {
+  background-color: var(--sds-c-badge-color-background, #ecebea);
+  padding: 0.25rem 0.5rem;
+  border-width: var(--sds-c-badge-sizing-border, 1px);
+  border-style: solid;
+  border-color: var(--sds-c-badge-color-border, transparent);
+  border-radius: var(--sds-c-badge-radius-border, 15rem);
+  font-size: var(--sds-c-badge-font-size, 0.75rem);
+  font-weight: 700;
+  line-height: var(--sds-c-badge-line-height, normal);
+  color: var(--sds-c-badge-text-color, #080707);
+  white-space: nowrap;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.slds-badge + .slds-badge {
+  margin-left: 0.5rem;
+}
+.slds-badge:empty {
+  padding: 0;
+}
+.slds-badge_inverse {
+  background-color: var(--sds-c-badge-inverse-color-background, #706e6b);
+  color: var(--sds-c-badge-inverse-text-color, white);
+}
+.slds-badge_lightest {
+  background-color: var(--sds-c-badge-lightest-color-background, white);
+  border-color: var(--sds-c-badge-lightest-color-border, #dddbda);
+}
+.slds-badge__icon {
+  color: var(--sds-c-badge-icon-color-foreground, #706e6b);
+  vertical-align: middle;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1;
+}
+.slds-badge__icon.slds-badge__icon_inverse {
+  color: currentColor;
+}
+.slds-badge__icon_left {
+  margin-right: 0.25rem;
+}
+.slds-badge__icon_right {
+  margin-left: 0.25rem;
+}

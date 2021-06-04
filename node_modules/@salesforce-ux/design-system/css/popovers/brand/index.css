@@ -1,0 +1,136 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-popover_brand .slds-popover__footer {
+  background-color: transparent;
+  border-color: transparent;
+}
+.slds-popover_brand .slds-popover__icon {
+  fill: #0176d3;
+}
+.slds-popover_brand.slds-popover_brand-dark .slds-popover__icon {
+  fill: #001639;
+}
+.slds-popover_brand-top {
+  border-top-width: 0.25rem;
+  border-top-color: #0176d3;
+}
+.slds-popover_brand-top.slds-nubbin_top:before,
+.slds-popover_brand-top.slds-nubbin_top-left:before,
+.slds-popover_brand-top.slds-nubbin_top-left-corner:before,
+.slds-popover_brand-top.slds-nubbin_top-right:before,
+.slds-popover_brand-top.slds-nubbin_top-right-corner:before {
+  margin-top: -0.1875rem;
+  background: linear-gradient(-45deg, transparent 50%, #0176d3 50%, #0176d3);
+}
+.slds-popover_brand-top.slds-nubbin_top:after,
+.slds-popover_brand-top.slds-nubbin_top-left:after,
+.slds-popover_brand-top.slds-nubbin_top-left-corner:after,
+.slds-popover_brand-top.slds-nubbin_top-right:after,
+.slds-popover_brand-top.slds-nubbin_top-right-corner:after {
+  margin-top: -0.1875rem;
+  background: linear-gradient(-45deg, transparent 50%, transparent 50%, transparent);
+}
+.slds-popover_brand-top.slds-popover_brand-dark {
+  border-top-color: #001639;
+}
+.slds-popover_brand-top.slds-popover_brand-dark.slds-nubbin_top:before,
+.slds-popover_brand-top.slds-popover_brand-dark.slds-nubbin_top-left:before,
+.slds-popover_brand-top.slds-popover_brand-dark.slds-nubbin_top-left-corner:before,
+.slds-popover_brand-top.slds-popover_brand-dark.slds-nubbin_top-right:before,
+.slds-popover_brand-top.slds-popover_brand-dark.slds-nubbin_top-right-corner:before {
+  margin-top: -0.1875rem;
+  background: linear-gradient(-45deg, transparent 50%, #001639 50%, #001639);
+}
+.slds-popover_brand-left {
+  border-left-width: 0.25rem;
+  border-left-color: #0176d3;
+}
+.slds-popover_brand-left.slds-nubbin_left:before,
+.slds-popover_brand-left.slds-nubbin_left-top:before,
+.slds-popover_brand-left.slds-nubbin_left-top-corner:before,
+.slds-popover_brand-left.slds-nubbin_left-bottom:before,
+.slds-popover_brand-left.slds-nubbin_left-bottom-corner:before {
+  margin-left: -0.1875rem;
+  background: linear-gradient(-135deg, transparent 50%, #0176d3 50%, #0176d3);
+}
+.slds-popover_brand-left.slds-nubbin_left:after,
+.slds-popover_brand-left.slds-nubbin_left-top:after,
+.slds-popover_brand-left.slds-nubbin_left-top-corner:after,
+.slds-popover_brand-left.slds-nubbin_left-bottom:after,
+.slds-popover_brand-left.slds-nubbin_left-bottom-corner:after {
+  margin-left: -0.1875rem;
+  background: linear-gradient(-135deg, transparent 50%, transparent 50%, transparent);
+}
+.slds-popover_brand-left.slds-popover_brand-dark {
+  border-left-color: #001639;
+}
+.slds-popover_brand-left.slds-popover_brand-dark.slds-nubbin_left:before,
+.slds-popover_brand-left.slds-popover_brand-dark.slds-nubbin_left-top:before,
+.slds-popover_brand-left.slds-popover_brand-dark.slds-nubbin_left-top-corner:before,
+.slds-popover_brand-left.slds-popover_brand-dark.slds-nubbin_left-bottom:before,
+.slds-popover_brand-left.slds-popover_brand-dark.slds-nubbin_left-bottom-corner:before {
+  margin-left: -0.1875rem;
+  background: linear-gradient(-135deg, transparent 50%, #001639 50%, #001639);
+}
+.slds-popover_brand-bottom {
+  border-bottom-width: 0.25rem;
+  border-bottom-color: #0176d3;
+}
+.slds-popover_brand-bottom.slds-nubbin_bottom:before,
+.slds-popover_brand-bottom.slds-nubbin_bottom-left:before,
+.slds-popover_brand-bottom.slds-nubbin_bottom-left-corner:before,
+.slds-popover_brand-bottom.slds-nubbin_bottom-right:before,
+.slds-popover_brand-bottom.slds-nubbin_bottom-right-corner:before {
+  margin-bottom: -0.1875rem;
+  background: linear-gradient(135deg, transparent 50%, #0176d3 50%, #0176d3);
+}
+.slds-popover_brand-bottom.slds-nubbin_bottom:after,
+.slds-popover_brand-bottom.slds-nubbin_bottom-left:after,
+.slds-popover_brand-bottom.slds-nubbin_bottom-left-corner:after,
+.slds-popover_brand-bottom.slds-nubbin_bottom-right:after,
+.slds-popover_brand-bottom.slds-nubbin_bottom-right-corner:after {
+  margin-bottom: -0.1875rem;
+  background: linear-gradient(135deg, transparent 50%, transparent 50%, transparent);
+}
+.slds-popover_brand-bottom.slds-popover_brand-dark {
+  border-bottom-color: #001639;
+}
+.slds-popover_brand-bottom.slds-popover_brand-dark.slds-nubbin_bottom:before,
+.slds-popover_brand-bottom.slds-popover_brand-dark.slds-nubbin_bottom-left:before,
+.slds-popover_brand-bottom.slds-popover_brand-dark.slds-nubbin_bottom-left-corner:before,
+.slds-popover_brand-bottom.slds-popover_brand-dark.slds-nubbin_bottom-right:before,
+.slds-popover_brand-bottom.slds-popover_brand-dark.slds-nubbin_bottom-right-corner:before {
+  margin-bottom: -0.1875rem;
+  background: linear-gradient(135deg, transparent 50%, #001639 50%, #001639);
+}
+.slds-popover_brand-right {
+  border-right-width: 0.25rem;
+  border-right-color: #0176d3;
+}
+.slds-popover_brand-right.slds-nubbin_right:before,
+.slds-popover_brand-right.slds-nubbin_right-top:before,
+.slds-popover_brand-right.slds-nubbin_right-top-corner:before,
+.slds-popover_brand-right.slds-nubbin_right-bottom:before,
+.slds-popover_brand-right.slds-nubbin_right-bottom-corner:before {
+  margin-right: -0.1875rem;
+  background: linear-gradient(45deg, transparent 50%, #0176d3 50%, #0176d3);
+}
+.slds-popover_brand-right.slds-nubbin_right:after,
+.slds-popover_brand-right.slds-nubbin_right-top:after,
+.slds-popover_brand-right.slds-nubbin_right-top-corner:after,
+.slds-popover_brand-right.slds-nubbin_right-bottom:after,
+.slds-popover_brand-right.slds-nubbin_right-bottom-corner:after {
+  margin-right: -0.1875rem;
+  background: linear-gradient(45deg, transparent 50%, transparent 50%, transparent);
+}
+.slds-popover_brand-right.slds-popover_brand-dark {
+  border-right-color: #001639;
+}
+.slds-popover_brand-right.slds-popover_brand-dark.slds-nubbin_right:before,
+.slds-popover_brand-right.slds-popover_brand-dark.slds-nubbin_right-top:before,
+.slds-popover_brand-right.slds-popover_brand-dark.slds-nubbin_right-top-corner:before,
+.slds-popover_brand-right.slds-popover_brand-dark.slds-nubbin_right-bottom:before,
+.slds-popover_brand-right.slds-popover_brand-dark.slds-nubbin_right-bottom-corner:before {
+  margin-right: -0.1875rem;
+  background: linear-gradient(45deg, transparent 50%, #001639 50%, #001639);
+}

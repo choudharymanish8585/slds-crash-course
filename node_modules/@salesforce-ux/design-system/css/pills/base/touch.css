@@ -1,0 +1,45 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-pill {
+  line-height: 1.875rem;
+  padding: 0 0.5rem;
+}
+.slds-pill + .slds-pill {
+  margin-left: 0.25rem;
+}
+.slds-pill__container,
+.slds-pill-container,
+.slds-pill_container {
+  padding: 0.25rem;
+}
+.slds-pill__label {
+  font-size: 0.875rem;
+}
+.slds-pill__icon ~ .slds-pill__action,
+.slds-pill__icon_container ~ .slds-pill__action {
+  padding-left: calc(1.25rem + 0.5rem);
+}
+
+.slds-pill_link {
+  padding: 0;
+}
+.slds-pill_link .slds-pill__icon_container {
+  left: 0.25rem;
+}
+.slds-pill_link .slds-pill__remove {
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  border: 0;
+}
+.slds-pill_link__icon ~ .slds-pill__action,
+.slds-pill_link__icon_container ~ .slds-pill__action {
+  padding-left: calc(1.25rem + 0.5rem);
+}
+
+.slds-pill__action {
+  padding: 0;
+  padding-left: 0.5rem;
+  padding-right: 2rem;
+}

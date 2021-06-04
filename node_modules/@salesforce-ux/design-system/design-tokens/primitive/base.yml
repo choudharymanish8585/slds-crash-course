@@ -1,0 +1,33 @@
+# Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+# Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+imports:
+- ./palettes/blue.yml
+- ./palettes/cloud-blue.yml
+- ./palettes/green.yml
+- ./palettes/hot-orange.yml
+- ./palettes/indigo.yml
+- ./palettes/orange.yml
+- ./palettes/pink.yml
+- ./palettes/purple.yml
+- ./palettes/red.yml
+- ./palettes/teal.yml
+- ./palettes/violet.yml
+- ./palettes/yellow.yml
+- ./background-color.yml
+- ./border-color.yml
+- ./border-radius.yml
+- ./border-width.yml
+- ./box-shadow.yml
+- ./duration.yml
+- ./font-family.yml
+- ./font-size.yml
+- ./font-weight.yml
+- ./line-height.yml
+- ./opacity.yml
+- ./palette-colors.yml
+- ./sizing.yml
+- ./spacing.yml
+- ./text-color.yml
+- ./touch.yml
+- ./z-index.yml

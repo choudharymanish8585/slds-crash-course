@@ -1,0 +1,50 @@
+// Lightning Design System 2.15.8
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+@mixin button-icon {
+  line-height: $line-height-reset;
+  vertical-align: middle;
+  color: $color-text-icon-default;
+  border: $border-width-thin solid $color-border-primary;
+  transition: border 0.15s linear;
+
+  &[disabled],
+  &:disabled {
+    color: $color-text-button-default-disabled;
+
+    /**
+     * Since slds-button_icon crosses paths with slds-button,
+     * we need to declare this property so slds-button's disabled
+     * state doesn't remove the border we want. slds-button has
+     * to declare its disabled properties and values to prevent
+     * its associated component-level styling hooks from overriding
+     * the disabled values.
+     */
+    border-color: $button-color-border-primary;
+  }
+}
+
+@mixin button-icon-brand {
+  background-color: $brand-accessible;
+  border-color: $brand-accessible;
+  color: $color-text-brand-primary;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $color-text-brand-primary;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $brand-accessible-active;
+    border-color: $brand-accessible-active;
+    color: $color-text-brand-primary;
+  }
+
+  &:active {
+    background-color: $brand-accessible-active;
+    border-color: $brand-accessible-active;
+  }
+}

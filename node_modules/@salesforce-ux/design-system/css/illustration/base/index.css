@@ -1,0 +1,35 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-illustration {
+  text-align: center;
+}
+.slds-illustration.slds-illustration_small .slds-illustration__svg {
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  margin-bottom: 1rem;
+}
+.slds-illustration.slds-illustration_large .slds-illustration__svg {
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  margin-bottom: 3rem;
+}
+.slds-illustration.slds-illustration_large .slds-illustration__header {
+  margin-bottom: 1.5rem;
+}
+.slds-illustration.slds-illustration_large p {
+  margin-bottom: 3rem;
+}
+.slds-illustration .slds-illustration__stroke-primary {
+  stroke: #90d0fe;
+}
+.slds-illustration .slds-illustration__stroke-secondary {
+  stroke: #cfe9fe;
+}
+.slds-illustration .slds-illustration__fill-primary {
+  fill: #90d0fe;
+}
+.slds-illustration .slds-illustration__fill-secondary {
+  fill: #cfe9fe;
+}

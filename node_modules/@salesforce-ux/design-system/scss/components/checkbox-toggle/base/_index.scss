@@ -1,0 +1,250 @@
+// Lightning Design System 2.15.8
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+/**
+ * @summary Initializes checkbox toggle
+ *
+ * @name base
+ * @selector .slds-checkbox_toggle
+ * @restrict label
+ * @support dev-ready
+ * @variant
+ */
+.slds-checkbox_toggle,
+.slds-checkbox--toggle {
+  width: 100%;
+
+  /**
+    * @summary Creates a custom styled checkbox
+    * @selector .slds-checkbox_faux
+    * @restrict .slds-checkbox_toggle span
+    */
+  .slds-checkbox_faux,
+  .slds-checkbox--faux {
+    display: block;
+    position: relative;
+    width: $width-toggle;
+    height: $height-toggle;
+    border-width: $border-width-thin;
+    border-style: solid;
+    // @todo consider shared hooks for inputs
+    border-color: var(--sds-c-checkbox-toggle-color-border, $color-background-toggle);
+    padding: $spacing-xxx-small;
+    // @todo consider shared hooks for inputs
+    background-color: var(--sds-c-checkbox-toggle-color-background, $color-background-toggle);
+    // @todo consider global hook
+    border-radius: var(--sds-c-checkbox-toggle-radius-border, $border-radius-pill);
+    box-shadow: var(--sds-c-checkbox-toggle-shadow);
+    transition: background-color 0.2s cubic-bezier(0.75, 0, 0.08, 1);
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      // @todo re-evaluate Styling Hooks reassignment
+      // @todo consider shared hooks for inputs
+      background-color: var(--sds-c-checkbox-toggle-color-background-hover, $color-background-toggle-hover);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: $square-toggle-slider;
+      height: $square-toggle-slider;
+      background-color: var(--sds-c-checkbox-toggle-switch-color-background, $color-background-alt);
+      // @todo consider global hook
+      border-radius: var(--sds-c-checkbox-toggle-radius-border, $border-radius-pill);
+    }
+  }
+
+  [type='checkbox'] {
+    @include square(1px);
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+
+    /**
+      * @summary Container for faux checkbox element
+      * @selector .slds-checkbox_faux_container
+      * @restrict .slds-checkbox_toggle span
+      */
+    + .slds-checkbox_faux_container,
+    + .slds-checkbox--faux_container {
+      // @todo consider shared hook (or global)
+      font-size: $font-size-1;
+      // @todo consider shared hook (or global)
+      color: $color-text-label;
+
+      /**
+        * @summary Container for text to show when checkbox is toggle off
+        * @selector .slds-checkbox_off
+        * @restrict .slds-checkbox_faux_container span
+        */
+      .slds-checkbox_off,
+      .slds-checkbox--off {
+        display: block;
+      }
+
+      /**
+        * @summary Container for text to show when checkbox is toggle on
+        * @selector .slds-checkbox_on
+        * @restrict .slds-checkbox_faux_container span
+        */
+      .slds-checkbox_on,
+      .slds-checkbox--on {
+        display: none;
+      }
+    }
+
+    &:focus {
+
+      + .slds-checkbox_faux,
+      + .slds-checkbox--faux,
+      ~ .slds-checkbox_faux,
+      ~ .slds-checkbox--faux,
+      + .slds-checkbox_faux_container .slds-checkbox_faux,
+      + .slds-checkbox--faux_container .slds-checkbox--faux {
+        // @todo re-evaluate Styling Hooks reassignment
+        // @todo consider shared hooks for inputs
+        background-color: var(--sds-c-checkbox-toggle-color-background-focus, $color-background-toggle-hover);
+        // @todo re-evaluate Styling Hooks reassignment
+        // @todo consider shared hooks for inputs
+        border-color: var(--sds-c-checkbox-toggle-color-border-focus, $color-border-input-active);
+        // @todo re-evaluate Styling Hooks reassignment
+        // @todo consider shared hooks for inputs
+        box-shadow: var(--sds-c-checkbox-toggle-shadow-focus, $shadow-button-focus);
+      }
+    }
+
+    // Checked State with Interactions
+    &:checked {
+
+      + .slds-checkbox_faux_container .slds-checkbox_off,
+      + .slds-checkbox--faux_container .slds-checkbox--off {
+        display: none;
+      }
+
+      + .slds-checkbox_faux_container .slds-checkbox_on,
+      + .slds-checkbox--faux_container .slds-checkbox--on {
+        display: block;
+      }
+
+      + .slds-checkbox_faux,
+      + .slds-checkbox--faux,
+      ~ .slds-checkbox_faux,
+      ~ .slds-checkbox--faux,
+      + .slds-checkbox_faux_container .slds-checkbox_faux,
+      + .slds-checkbox--faux_container .slds-checkbox--faux {
+        // @todo re-evaluate Styling Hooks reassignment
+        // @todo consider shared hooks for inputs
+        border-color: var(--sds-c-checkbox-toggle-color-border-checked, $brand-accessible);
+        // @todo re-evaluate Styling Hooks reassignment
+        // @todo consider shared hooks for inputs
+        background-color: var(--sds-c-checkbox-toggle-color-background-checked, $brand-accessible);
+
+        &:hover,
+        &:focus {
+          // @todo re-evaluate Styling Hooks reassignment
+          // @todo consider shared hooks for inputs
+          background-color: var(--sds-c-checkbox-toggle-color-background-checked-hover, $brand-accessible-active);
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          width: $square-toggle-slider;
+          height: $square-toggle-slider;
+          // @todo JB revisit
+          background-color: var(--sds-c-checkbox-toggle-switch-color-background-checked, var(--sds-c-checkbox-toggle-switch-color-background, $color-background-alt));
+          border-radius: var(--sds-c-checkbox-toggle-radius-border, $border-radius-pill);
+          transition: transform 0.2s cubic-bezier(0.75, 0, 0.08, 1);
+        }
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: 0.25rem; // These are arbitrary to create the checkbox
+          left: 0.6rem; // like the right positioning above
+          height: 0.7rem; // Seems silly to tokenize?
+          width: 0.45rem;
+          border-bottom-width: $border-width-thick;
+          border-bottom-style: solid;
+          border-bottom-color: var(--sds-c-checkbox-toggle-mark-color-foreground, $color-border-toggle-checked);
+          /* stylelint-disable comment-empty-line-before */
+          /*! @noflip */
+          border-right-width: $border-width-thick;
+          border-right-style: solid;
+          border-right-color: var(--sds-c-checkbox-toggle-mark-color-foreground, $color-border-toggle-checked);
+          border-radius: 0;
+          background-color: transparent;
+          transform: rotate(45deg);
+        }
+      }
+
+      &:focus {
+
+        + .slds-checkbox_faux,
+        + .slds-checkbox--faux,
+        ~ .slds-checkbox_faux,
+        ~ .slds-checkbox--faux,
+        + .slds-checkbox_faux_container .slds-checkbox_faux,
+        + .slds-checkbox--faux_container .slds-checkbox--faux {
+          // @todo re-evaluate Styling Hooks reassignment
+          // @todo consider shared hooks for inputs
+          background-color: var(--sds-c-checkbox-toggle-color-background-checked-focus, $brand-accessible-active);
+        }
+      }
+    }
+
+    &[disabled] {
+
+      + .slds-checkbox_faux,
+      + .slds-checkbox--faux,
+      ~ .slds-checkbox_faux,
+      ~ .slds-checkbox--faux,
+      + .slds-checkbox_faux_container .slds-checkbox_faux,
+      + .slds-checkbox--faux_container .slds-checkbox--faux {
+        // @todo consider shared hooks for inputs
+        background-color: $color-background-toggle-disabled;
+        // @todo consider shared hooks for inputs
+        border-color: $color-background-toggle; // Prevents checked styles from bleeding through
+        pointer-events: none;
+
+        &:after {
+          // @todo consider shared hooks for inputs
+          background-color: $color-background-input-checkbox-disabled;
+        }
+
+        &:hover,
+        &:focus {
+          // @todo consider shared hooks for inputs
+          background-color: $color-background-toggle-disabled;
+          cursor: default;
+        }
+      }
+
+      &:checked {
+
+        + .slds-checkbox_faux_container .slds-checkbox_faux,
+        + .slds-checkbox--faux_container .slds-checkbox--faux {
+
+          &:before {
+            // @todo consider shared hooks for inputs
+            background-color: $color-background-input-checkbox-disabled;
+          }
+
+          &:after {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

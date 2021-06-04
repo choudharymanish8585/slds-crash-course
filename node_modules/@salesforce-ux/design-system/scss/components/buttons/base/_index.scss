@@ -1,0 +1,565 @@
+// Lightning Design System 2.15.8
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+@import 'deprecate';
+@import '../mixins/index';
+
+/**
+ * @summary This neutralizes all the base styles making it look like a text link
+ * @name base
+ * @selector .slds-button
+ * @restrict button, a, span
+ * @support dev-ready
+ * @variant
+ */
+.slds-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-top: var(--sds-c-button-spacing-block-start, 0);
+  padding-right: var(--sds-c-button-spacing-inline-end, 0);
+  padding-bottom: var(--sds-c-button-spacing-block-end, 0);
+  padding-left: var(--sds-c-button-spacing-inline-start, 0);
+  background: none; // Reset underlying styles like VF
+  background-color: var(--sds-c-button-color-background, transparent);
+  background-clip: border-box;
+  border-color: var(--sds-c-button-color-border, transparent);
+  border-style: solid;
+  border-width: var(--sds-c-button-sizing-border, $border-width-thin);
+  border-radius: var(--sds-c-button-radius-border, $button-border-radius);
+  box-shadow: var(--sds-c-button-shadow);
+  line-height: var(--sds-c-button-line-height, $line-height-button);
+  text-decoration: none;
+  color: var(--sds-c-button-text-color, $brand-accessible);
+  // stylelint-disable property-no-vendor-prefix
+  -webkit-appearance: none;
+  // stylelint-enable property-no-vendor-prefix
+  white-space: normal;
+  user-select: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    color: var(--sds-c-button-text-color-hover, $brand-accessible-active);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: var(--sds-c-button-shadow-focus, $shadow-button-focus);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    color: var(--sds-c-button-text-color-active, $brand-accessible-active);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-text-button-default-disabled;
+    cursor: default;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  a {
+    color: currentColor;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &[disabled],
+  &:disabled {
+
+    .slds-button__icon {
+      fill: currentColor;
+      pointer-events: none;
+    }
+  }
+  // Add spacing when button-group is adjacent to a button
+  + .slds-button-group,
+  + .slds-button-group-list {
+    margin-left: $spacing-xx-small;
+  }
+  // Add spacing when another button is adjacent to it
+  + .slds-button {
+    margin-left: $spacing-xx-small;
+  }
+}
+
+// Polyfill for slds-button on links
+a.slds-button {
+  text-align: center;
+
+  &:focus {
+    outline: 0;
+    box-shadow: var(--sds-c-button-shadow-focus, $shadow-button-focus);
+  }
+}
+
+a.slds-button_inverse:focus,
+a.slds-button--inverse:focus {
+  outline: none;
+  box-shadow: var(--sds-c-button-inverse-shadow-focus, $shadow-button-focus-inverse);
+  border: $border-width-thin solid var(--sds-c-button-inverse-color-border-focus, $color-border-button-focus-inverse);
+}
+
+/**
+ * @name reset
+ * @summary Resets attributes of .slds-button back to the browser default
+ * @selector .slds-button_reset
+ * @restrict button, a, span
+ * @modifier
+ * @group theme
+ */
+.slds-button_reset,
+.slds-button--reset {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: inherit;
+}
+
+/**
+ * @name neutral
+ * @summary Creates the gray border with white background default style
+ * @selector .slds-button_neutral
+ * @restrict .slds-button
+ * @modifier
+ * @group theme
+ */
+.slds-button_neutral,
+.slds-button--neutral {
+  @include button-shape(neutral);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-neutral-color-background, $button-color-background-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-neutral-color-border, $button-color-border-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-neutral-color-background-hover, $color-background-button-default-hover);
+    border-color: var(--sds-c-button-neutral-color-border-hover, $button-color-border-primary);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-neutral-color-background-active, $color-background-button-default-active);
+    border-color: var(--sds-c-button-neutral-color-border-active, $button-color-border-primary);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $color-background-button-default-disabled;
+    border-color: $button-color-border-primary;
+  }
+}
+
+/**
+ * @name brand
+ * @summary Creates the brand blue Salesforce style
+ * @selector .slds-button_brand
+ * @restrict .slds-button
+ * @modifier
+ * @group theme
+ */
+.slds-button_brand,
+.slds-button--brand {
+  @include button-shape(brand);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-brand-color-background, $brand-accessible);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-brand-color-border, $brand-accessible);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  color: var(--sds-c-button-brand-text-color, $color-text-brand-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-brand-color-background-hover, $brand-accessible-active);
+    border-color: var(--sds-c-button-brand-color-border-hover, $brand-accessible-active);
+    color: var(--sds-c-button-brand-text-color-hover, $color-text-brand-primary);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-brand-color-background-active, $brand-accessible-active);
+    border-color: var(--sds-c-button-brand-color-border-active, $brand-accessible-active);
+    color: var(--sds-c-button-brand-text-color-active, $color-text-brand-primary);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $brand-disabled;
+    border-color: $brand-disabled;
+    color: $color-text-button-brand-disabled;
+  }
+}
+
+/**
+ * @name outline-brand
+ * @summary Creates the outlined button with the brand color
+ * @selector .slds-button_outline-brand
+ * @restrict .slds-button
+ * @modifier
+ * @group theme
+ */
+.slds-button_outline-brand {
+  @include button-shape(outline-brand);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-outline-brand-color-background, $button-color-background-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-outline-brand-color-border, $brand-accessible);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-outline-brand-color-background-hover, $color-background-button-default-hover);
+    border-color: var(--sds-c-button-outline-brand-color-border-hover, $brand-accessible);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-outline-brand-color-background-active, $color-background-button-default-active);
+    border-color: var(--sds-c-button-outline-brand-color-border-active, $brand-accessible);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $color-background-button-default-disabled;
+    border-color: $color-border;
+  }
+}
+
+/**
+ * @name inverse
+ * @summary Creates the inverse style for dark backgrounds
+ * @selector .slds-button_inverse
+ * @restrict .slds-button
+ * @modifier
+ * @group theme
+ */
+.slds-button_inverse,
+.slds-button--inverse {
+  @include button-shape(inverse);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-inverse-color-background, $color-background-button-inverse);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-inverse-color-border, $button-color-border-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-inverse-color-background-hover, $color-background-button-default-hover);
+    border-color: var(--sds-c-button-inverse-color-border-hover, $button-color-border-primary);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-inverse-color-background-active, $color-background-button-default-hover);
+    border-color: var(--sds-c-button-inverse-color-border-active, $button-color-border-primary);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $color-background-button-inverse-disabled;
+    border-color: $color-border-button-inverse-disabled;
+  }
+}
+
+.slds-button_inverse,
+.slds-button--inverse,
+.slds-button_icon-border-inverse,
+.slds-button--icon-border-inverse {
+
+  &,
+  &:link,
+  &:visited {
+    color: var(--sds-c-button-inverse-text-color, $color-text-button-inverse);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--sds-c-button-inverse-text-color-active, $color-text-button-default);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--sds-c-button-inverse-shadow-focus, $shadow-button-focus-inverse);
+    border: $border-width-thin solid $color-border-button-focus-inverse;
+  }
+
+  &[disabled],
+  &:disabled {
+    // Make sure disabled buttons don't inherit hover states
+    color: $color-text-button-inverse-disabled;
+  }
+}
+
+/**
+ * @name destructive
+ * @summary Creates a red button style
+ * @selector .slds-button_destructive
+ * @restrict .slds-button
+ * @group theme
+ * @modifier
+ */
+.slds-button_destructive,
+.slds-button--destructive {
+  @include button-shape(destructive);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-destructive-color-background, $color-background-destructive);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-destructive-color-border, $color-background-destructive);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  color: var(--sds-c-button-destructive-text-color, $color-text-inverse);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-destructive-color-background-hover, $color-background-destructive-hover);
+    border-color: var(--sds-c-button-destructive-color-border-hover, $color-background-destructive);
+    color: var(--sds-c-button-destructive-text-color-hover, $color-text-inverse);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-destructive-color-background-active, $color-background-destructive-active);
+    border-color: var(--sds-c-button-destructive-color-border-active, $color-border-destructive-active);
+    color: var(--sds-c-button-destructive-text-color-active, $color-text-inverse);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $brand-disabled;
+    border-color: $brand-disabled;
+    color: $color-text-button-brand-disabled;
+  }
+}
+
+/**
+ * @name text-destructive
+ * @summary Creates a neutral button with red text
+ * @selector .slds-button_text-destructive
+ * @restrict .slds-button
+ * @modifier
+ * @group theme
+ */
+.slds-button_text-destructive {
+  @include button-shape(text-destructive);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-text-destructive-color-background, $button-color-background-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-text-destructive-color-border, $button-color-border-primary);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  color: var(--sds-c-button-text-destructive-text-color, $color-text-destructive);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-text-destructive-color-background-hover, $color-background-button-default-hover);
+    border-color: var(--sds-c-button-text-destructive-color-border-hover, $button-color-border-primary);
+    color: var(--sds-c-button-text-destructive-text-color-hover, $color-text-destructive-hover);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-text-destructive-color-background-active, $color-background-button-default-active);
+    border-color: var(--sds-c-button-text-destructive-color-border-active, $button-color-border-primary);
+    color: var(--sds-c-button-text-destructive-text-color-active, $color-text-destructive-hover);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $color-background-button-default-disabled;
+    border-color: $button-color-border-primary;
+    color: $color-text-button-default-disabled;
+  }
+}
+
+/**
+ * @name success
+ * @summary Creates a green button style
+ * @selector .slds-button_success
+ * @restrict .slds-button
+ * @group theme
+ * @modifier
+ */
+.slds-button_success,
+.slds-button--success {
+  @include button-shape(success);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-button-success-color-background, $color-background-button-success);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-button-success-color-border, $color-border-success);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  color: var(--sds-c-button-success-text-color, $color-text-default);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:hover,
+  &:focus {
+    background-color: var(--sds-c-button-success-color-background-hover, $color-background-button-success-hover);
+    border-color: var(--sds-c-button-success-color-border-hover, $color-border-success-dark);
+    color: var(--sds-c-button-success-text-color-hover, $color-text-inverse);
+  }
+
+  // @todo re-evaluate Styling Hooks reassignment
+  &:active {
+    background-color: var(--sds-c-button-success-color-background-active, $color-background-button-success-active);
+    border-color: var(--sds-c-button-success-color-border-active, $color-border-success-dark);
+    color: var(--sds-c-button-success-text-color-active, $color-text-inverse);
+  }
+
+  &[disabled],
+  &:disabled {
+    // @todo: global shared disabled button hooks
+    background-color: $brand-disabled;
+    border-color: $brand-disabled;
+    color: $color-text-button-brand-disabled;
+  }
+}
+
+/**
+ * @name with-icon
+ * @summary Sizing for icon that sits inside button__icon
+ * @selector .slds-button__icon
+ * @restrict .slds-button svg
+ * @support dev-ready
+ * @variant
+ */
+.slds-button__icon {
+  @include square($square-icon-medium-content-alt);
+  fill: currentColor;
+}
+
+/**
+ * @name large
+ * @summary Large size button icon svg
+ * @selector .slds-button__icon_large
+ * @restrict .slds-button__icon
+ * @modifier
+ * @group size
+ */
+.slds-button__icon_large,
+.slds-button__icon--large {
+  @include square($square-icon-utility-large);
+}
+
+/**
+ * @name small
+ * @summary Small size button icon svg
+ * @selector .slds-button__icon_small
+ * @restrict .slds-button__icon
+ * @modifier
+ * @group size
+ */
+.slds-button__icon_small,
+.slds-button__icon--small {
+  @include square($square-icon-small-content);
+}
+
+/**
+ * @name x-small
+ * @summary X-Small size button icon svg
+ * @selector .slds-button__icon_x-small
+ * @restrict .slds-button__icon
+ * @modifier
+ * @group size
+ */
+.slds-button__icon_x-small,
+.slds-button__icon--x-small {
+  @include square($square-icon-x-small-content);
+}
+
+/**
+ * @summary Position of icon when sitting to the left side of the text when inside a button
+ * @selector .slds-button__icon_left
+ * @restrict .slds-button__icon, .slds-button__icon_stateful
+ */
+.slds-button__icon_left,
+.slds-button__icon--left {
+  margin-right: $spacing-x-small;
+}
+
+/**
+ * @summary Position of icon when sitting to the right side of the text when inside a button
+ * @selector .slds-button__icon_right
+ * @restrict .slds-button__icon, .slds-button__icon_stateful
+ */
+.slds-button__icon_right,
+.slds-button__icon--right {
+  margin-left: $spacing-x-small;
+}
+
+/**
+ * @summary Creates a button style for full width that resets styling
+ * @selector .slds-button_full-width
+ * @restrict .slds-button
+ * @modifier
+ * @group size
+ */
+.slds-button_full-width {
+  @include button-reset;
+  width: 100%;
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+/**
+ * @summary Creates a button style for 100% width with centered text that maintains current styling
+ * @selector .slds-button_stretch
+ * @restrict .slds-button
+ * @modifier
+ * @group size
+ */
+.slds-button_stretch {
+  justify-content: center;
+  width: 100%;
+}

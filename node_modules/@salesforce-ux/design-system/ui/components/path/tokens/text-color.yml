@@ -1,0 +1,18 @@
+global:
+  scope: component
+  type: color
+  category: text-color
+  cssProperties:
+  - color
+
+imports:
+- "../../../../design-tokens/aliases/colors.yml"
+- "../../../../design-tokens/aliases/color-palettes.yml"
+
+props:
+  COLOR_TEXT_PATH_CURRENT:
+    value: '{!PALETTE_BLUE_30}'
+    comment: Used as a text color for the active Path step.
+  COLOR_TEXT_PATH_CURRENT_HOVER:
+    value: '{!PALETTE_BLUE_20}'
+    comment: Used as a text hover color for the active Path step.

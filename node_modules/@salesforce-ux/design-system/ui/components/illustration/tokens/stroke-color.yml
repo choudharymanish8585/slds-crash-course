@@ -1,0 +1,15 @@
+global:
+  type: color
+  category: stroke-color
+  cssProperties:
+  - stroke
+  - fill
+imports:
+- "../../../../design-tokens/aliases/color-palettes.yml"
+props:
+  ILLUSTRATION_COLOR_PRIMARY:
+    value: '{!PALETTE_CLOUD_BLUE_80}'
+    comment: Primary color for illustrations
+  ILLUSTRATION_COLOR_SECONDARY:
+    value: '{!PALETTE_CLOUD_BLUE_90}'
+    comment: Secondary color for illustrations

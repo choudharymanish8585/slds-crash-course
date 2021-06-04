@@ -1,0 +1,6 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-button {
+  --sds-c-button-line-height: 2.625rem;
+  font-weight: 700;
+}

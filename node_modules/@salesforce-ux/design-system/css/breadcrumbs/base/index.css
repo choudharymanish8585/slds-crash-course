@@ -1,0 +1,37 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-breadcrumb {
+}
+.slds-breadcrumb .slds-list__item,
+.slds-breadcrumb .slds-breadcrumb__item {
+  position: relative;
+}
+.slds-breadcrumb .slds-list__item:before,
+.slds-breadcrumb .slds-breadcrumb__item:before {
+  content: ">";
+  position: absolute;
+  left: -0.25rem;
+}
+.slds-breadcrumb .slds-list__item > a,
+.slds-breadcrumb .slds-breadcrumb__item > a {
+  display: block;
+  padding-top: 0;
+  padding-right: var(--sds-c-breadcrumbs-spacing-inline-end, 0.5rem);
+  padding-bottom: 0;
+  padding-left: var(--sds-c-breadcrumbs-spacing-inline-start, 0.5rem);
+}
+.slds-breadcrumb .slds-list__item > a:hover,
+.slds-breadcrumb .slds-breadcrumb__item > a:hover {
+  text-decoration: none;
+}
+.slds-breadcrumb .slds-list__item:first-child > a,
+.slds-breadcrumb .slds-breadcrumb__item:first-child > a {
+  padding-left: 0;
+}
+.slds-breadcrumb .slds-list__item:first-child:before,
+.slds-breadcrumb .slds-breadcrumb__item:first-child:before {
+  content: "";
+}
+.slds-breadcrumb .slds-dropdown-trigger {
+  margin-right: var(--sds-c-breadcrumbs-spacing-inline-end, 0.5rem);
+}

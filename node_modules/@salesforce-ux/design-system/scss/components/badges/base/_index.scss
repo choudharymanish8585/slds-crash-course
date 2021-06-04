@@ -1,0 +1,119 @@
+// Lightning Design System 2.15.8
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+/**
+ * @summary Create badge component
+ *
+ * @name base
+ * @selector .slds-badge
+ * @restrict span
+ * @support dev-ready
+ * @variant
+ */
+.slds-badge {
+  background-color: var(--sds-c-badge-color-background, $color-background-dark);
+  padding: $spacing-xx-small $spacing-x-small;
+  border-width: var(--sds-c-badge-sizing-border, $border-width-thin);
+  border-style: solid;
+  border-color: var(--sds-c-badge-color-border, transparent);
+  border-radius: var(--sds-c-badge-radius-border, $border-radius-pill);
+  font-size: var(--sds-c-badge-font-size, $font-size-2);
+  font-weight: $font-weight-bold;
+  line-height: var(--sds-c-badge-line-height, normal);
+  color: var(--sds-c-badge-text-color, $color-text-default);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+
+  + .slds-badge {
+    margin-left: $spacing-x-small;
+  }
+
+  &:empty {
+    padding: 0;
+  }
+}
+
+/**
+ * @summary Change badge color to a dark with light text
+ * @name inverse
+ * @selector .slds-badge_inverse
+ * @restrict .slds-badge
+ * @modifier
+ * @group color
+ */
+.slds-badge_inverse {
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-badge-inverse-color-background, $badge-color-background-inverse);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  color: var(--sds-c-badge-inverse-text-color, $color-text-inverse);
+}
+
+/**
+ * @summary Change badge color to white with normal text
+ * @name lightest
+ * @selector .slds-badge_lightest
+ * @restrict .slds-badge
+ * @modifier
+ * @group color
+ */
+.slds-badge_lightest {
+  // @todo re-evaluate Styling Hooks reassignment
+  background-color: var(--sds-c-badge-lightest-color-background, $badge-color-background-lightest);
+
+  // @todo re-evaluate Styling Hooks reassignment
+  border-color: var(--sds-c-badge-lightest-color-border, $color-border);
+}
+
+/**
+ * @summary Adds an icon to badge
+ * @name icon-container
+ * @selector .slds-badge__icon
+ * @restrict .slds-badge span
+ * @modifier
+ */
+.slds-badge__icon {
+  color: var(--sds-c-badge-icon-color-foreground, $color-text-icon-default);
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+
+  /**
+   * @summary Change badge icon fill color to inverse
+   * @name icon-inverse
+   * @selector .slds-badge__icon_inverse
+   * @restrict .slds-badge__icon
+   * @modifier
+   * @group color
+   */
+  &.slds-badge__icon_inverse {
+    color: currentColor;
+  }
+}
+
+/**
+ * @summary Adds an icon to the left of the badge text
+ * @name icon-left
+ * @selector .slds-badge__icon_left
+ * @restrict .slds-badge__icon
+ * @modifier
+ * @group spacing
+ */
+.slds-badge__icon_left {
+  margin-right: $spacing-xx-small;
+}
+
+/**
+ * @summary Adds an icon to the right of the badge text
+ * @name icon-right
+ * @selector .slds-badge__icon_right
+ * @restrict .slds-badge__icon
+ * @modifier
+ * @group spacing
+ */
+.slds-badge__icon_right {
+  margin-left: $spacing-xx-small;
+}

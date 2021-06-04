@@ -1,0 +1,116 @@
+// Lightning Design System 2.15.8
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+// Internal variables
+$alert-gradient: linear-gradient(45deg, rgba(#000, 0.025) 25%, transparent 25%, transparent 50%, rgba(#000, 0.025) 50%, rgba(#000, 0.025) 75%, transparent 75%, transparent);
+$alert-gradient-size-background: 64px 64px;
+
+/**
+ * @summary Initializes alert notification
+ * @name base
+ * @selector .slds-notify_alert
+ * @restrict div
+ * @support dev-ready
+ * @variant
+ */
+.slds-notify_alert,
+.slds-notify--alert {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--sds-c-alert-spacing-block-start, $spacing-x-small);
+  padding-right: var(--sds-c-alert-spacing-inline-end, $spacing-x-large);
+  padding-bottom: var(--sds-c-alert-spacing-block-end, $spacing-x-small);
+  padding-left: var(--sds-c-alert-spacing-inline-start, $spacing-x-small);
+  color: var(--sds-c-alert-text-color, $color-text-inverse);
+  font-weight: var(--sds-c-alert-font-weight);
+  text-align: center;
+  background-color: var(--sds-c-alert-color-background, $color-background-toast);
+  background-image: var(--sds-c-alert-image-background, $alert-gradient);
+  background-size: var(--sds-c-alert-size-background, $alert-gradient-size-background);
+
+  // Text links within an Alert
+  a {
+    color: currentColor;
+    border: $border-width-thin solid transparent;
+    border-radius: $border-radius-medium;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      outline: 0;
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px $color-border-link-focus-inverse;
+      border: $border-width-thin solid $color-border-link-focus-inverse;
+    }
+
+    &:active {
+      // @todo re-evaluate Styling Hooks reassignment
+      color: var(--sds-c-alert-text-color-active, $color-text-link-inverse-active);
+    }
+
+    &[disabled] {
+      // @TODO: declare at shared/global level
+      color: $color-text-link-inverse-disabled;
+    }
+  }
+}
+
+/**
+ * @summary Sets styling for warning alert notification
+ * @selector .slds-alert_warning
+ * @restrict .slds-notify_alert
+ */
+.slds-alert_warning {
+  // @TODO: declare at sub-system level (SLDS)
+  background-color: $color-background-warning;
+
+  // @TODO: declare at sub-system level (SLDS)
+  color: $color-text-default;
+  // --sds-c-alert-color-text: var(--sds-c-alert-color-text-warning, #{$color-text-default});
+
+  .slds-icon,
+  .slds-button__icon {
+    // @TODO: declare at sub-system level (SLDS)
+    fill: $color-gray-10;
+  }
+}
+
+/**
+ * @summary Sets styling for error alert notification
+ * @selector .slds-alert_error
+ * @restrict .slds-notify_alert
+ */
+.slds-alert_error {
+  // @TODO: declare at sub-system level (SLDS)
+  background-color: $color-background-toast-error;
+}
+
+/**
+ * @summary Sets styling for offline alert notification
+ * @selector .slds-alert_offline
+ * @restrict .slds-notify_alert
+ */
+.slds-alert_offline {
+  // @TODO: declare at sub-system level (SLDS)
+  background-color: #444;
+}
+
+/**
+  * @summary Alert close button
+  * @selector .slds-notify__close
+  * @restrict .slds-notify_alert div
+  */
+.slds-notify__close {
+  position: absolute;
+  top: 50%;
+  right: $spacing-small;
+  margin-left: $spacing-xx-small;
+  transform: translateY(-50%);
+}

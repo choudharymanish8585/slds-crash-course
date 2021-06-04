@@ -1,0 +1,52 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+[kx-scope="breadcrumbs-item"][kx-type="underline"] > a {
+  position: relative;
+  will-change: color, transform;
+  -webkit-transition: -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1),
+    -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  margin-right: var(--sds-c-breadcrumbs-spacing-inline-end, 0.5rem);
+  margin-left: var(--sds-c-breadcrumbs-spacing-inline-start, 0.5rem);
+  padding-right: 0;
+  padding-left: 0;
+}
+[kx-scope="breadcrumbs-item"][kx-type="underline"] > a:active {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+}
+@media (prefers-reduced-motion: reduce) {
+  [kx-scope="breadcrumbs-item"][kx-type="underline"] > a:active {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+[kx-scope="breadcrumbs-item"][kx-type="underline"] > a:after {
+  will-change: transform-origin, transform;
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  height: 0.0625rem;
+  width: 100%;
+  background: #0176d3;
+  background-position: left top;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: var(--slds-kx-breadcrumbs-pointer-position-x, 50%) 0;
+  transform-origin: var(--slds-kx-breadcrumbs-pointer-position-x, 50%) 0;
+  -webkit-transition: -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+  transition: transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1),
+    -webkit-transform calc(calc(1 * 1) * 250ms / 1) cubic-bezier(0, 0.3, 0.15, 1);
+}
+[kx-scope="breadcrumbs-item"][kx-type="underline"] > a:hover:after {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+[kx-scope="breadcrumbs-item"][kx-type="underline"]:first-child > a {
+  margin-left: 0;
+}

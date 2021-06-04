@@ -1,0 +1,81 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-notify_alert {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--sds-c-alert-spacing-block-start, 0.5rem);
+  padding-right: var(--sds-c-alert-spacing-inline-end, 2rem);
+  padding-bottom: var(--sds-c-alert-spacing-block-end, 0.5rem);
+  padding-left: var(--sds-c-alert-spacing-inline-start, 0.5rem);
+  color: var(--sds-c-alert-text-color, white);
+  font-weight: var(--sds-c-alert-font-weight);
+  text-align: center;
+  background-color: var(--sds-c-alert-color-background, #706e6b);
+  background-image: var(
+    --sds-c-alert-image-background,
+    linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.025) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.025) 50%,
+      rgba(0, 0, 0, 0.025) 75%,
+      transparent 75%,
+      transparent
+    )
+  );
+  background-size: var(--sds-c-alert-size-background, 64px 64px);
+}
+.slds-notify_alert a {
+  color: currentColor;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-decoration: underline;
+}
+.slds-notify_alert a:hover,
+.slds-notify_alert a:focus {
+  text-decoration: none;
+  outline: 0;
+}
+.slds-notify_alert a:focus {
+  -webkit-box-shadow: 0 0 3px #ecebea;
+  box-shadow: 0 0 3px #ecebea;
+  border: 1px solid #ecebea;
+}
+.slds-notify_alert a:active {
+  color: var(--sds-c-alert-text-color-active, rgba(255, 255, 255, 0.5));
+}
+.slds-notify_alert a[disabled]a[disabled] {
+  color: rgba(255, 255, 255, 0.15);
+}
+.slds-alert_warning {
+  background-color: #fe9339;
+  color: #080707;
+}
+.slds-alert_warning .slds-icon,
+.slds-alert_warning .slds-button__icon {
+  fill: #514f4d;
+}
+.slds-alert_error {
+  background-color: #ea001e;
+}
+.slds-alert_offline {
+  background-color: #444;
+}
+.slds-notify__close {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  margin-left: 0.25rem;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

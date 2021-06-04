@@ -1,0 +1,192 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-input {
+  display: inline-block;
+  padding-top: 0;
+  padding-right: var(--sds-c-input-spacing-horizontal-end, 1rem);
+  padding-bottom: 0;
+  padding-left: var(--sds-c-input-spacing-horizontal-start, 0.75rem);
+  width: 100%;
+  min-height: calc(1.875rem + (1px * 2));
+  line-height: 1.875rem;
+  border: 1px solid var(--sds-c-input-color-border, #dddbda);
+  border-radius: var(--sds-c-input-radius-border, 0.25rem);
+  background-color: var(--sds-c-input-color-background, white);
+  color: var(--sds-c-input-text-color);
+  -webkit-box-shadow: var(--sds-c-input-shadow);
+  box-shadow: var(--sds-c-input-shadow);
+  -webkit-transition: border 0.1s linear, background-color 0.1s linear;
+  transition: border 0.1s linear, background-color 0.1s linear;
+}
+.slds-input:focus,
+.slds-input:active {
+  /*! @css-var-fallback border-color */
+  border-color: var(--sds-c-input-color-border-focus, #1b96ff);
+  /*! @css-var-fallback background-color */
+  background-color: var(--sds-c-input-color-background-focus, var(--sds-c-input-color-background, white));
+  color: var(--sds-c-input-text-color-focus);
+  /*! @css-var-fallback box-shadow */
+  -webkit-box-shadow: var(--sds-c-input-shadow-focus, 0 0 3px #0176d3);
+  box-shadow: var(--sds-c-input-shadow-focus, 0 0 3px #0176d3);
+  outline: 0;
+}
+.slds-input[disabled],
+.slds-input.slds-is-disabled {
+  background-color: #ecebea;
+  border-color: #c9c7c5;
+  color: #3e3e3c;
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.slds-input[disabled]:focus,
+.slds-input[disabled]:active,
+.slds-input.slds-is-disabled:focus,
+.slds-input.slds-is-disabled:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.slds-input[readonly] {
+  padding-left: 0;
+  border-color: transparent;
+  background-color: transparent;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.slds-input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.slds-input[type="search"]::-webkit-search-decoration,
+.slds-input[type="search"]::-webkit-search-cancel-button,
+.slds-input[type="search"]::-webkit-search-results-button,
+.slds-input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+.slds-input[type="url"],
+.slds-input[type="tel"],
+.slds-input[type="email"] {
+  direction: ltr;
+  text-align: left;
+}
+.slds-input_bare {
+  /*! @css-var-fallback background-color */
+  background-color: transparent;
+  /*! @css-var-fallback padding-right */
+  padding-right: 0;
+  /*! @css-var-fallback padding-left */
+  padding-left: 0.75rem;
+  border: 0;
+  color: #080707;
+}
+.slds-input_bare:focus,
+.slds-input_bare:active {
+  /*! @css-var-fallback box-shadow */
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.slds-input_height {
+  min-height: calc(1.875rem + (1px * 2));
+}
+.slds-input_borders {
+  /*! @css-var-fallback padding-right */
+  padding-right: 0.75rem;
+  /*! @css-var-fallback border-color */
+  border-color: #dddbda;
+}
+.slds-input-has-icon {
+  position: relative;
+}
+.slds-input-has-icon .slds-input__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.4375rem;
+  line-height: 1;
+  border: 0;
+  z-index: 2;
+}
+.slds-input-has-icon .slds-input__icon:not(button) {
+  pointer-events: none;
+}
+.slds-input-has-icon_left .slds-input__icon {
+  left: 0.75rem;
+}
+.slds-input-has-icon_left .slds-input,
+.slds-input-has-icon_left .slds-input_bare {
+  /*! @css-var-fallback padding-left */
+  padding-left: 2rem;
+}
+.slds-input-has-icon_right .slds-input__icon {
+  right: 0.75rem;
+}
+.slds-input-has-icon_right .slds-input,
+.slds-input-has-icon_right .slds-input_bare {
+  /*! @css-var-fallback padding-right */
+  padding-right: 2rem;
+}
+.slds-input-has-icon_left-right {
+}
+.slds-input-has-icon_left-right .slds-input__icon_left {
+  left: 0.75rem;
+}
+.slds-input-has-icon_left-right .slds-input__icon_right {
+  right: 0.75rem;
+}
+.slds-input-has-icon_left-right .slds-input,
+.slds-input-has-icon_left-right .slds-input_bare {
+  /*! @css-var-fallback padding-left */
+  padding-left: 2rem;
+  /*! @css-var-fallback padding-right */
+  padding-right: 2rem;
+}
+.slds-input-has-icon_group-right .slds-input,
+.slds-input-has-icon_group-right .slds-input_bare {
+  /*! @css-var-fallback padding-right */
+  padding-right: 3.5rem;
+}
+.slds-input__icon-group {
+  position: absolute;
+  height: 1rem;
+  margin-top: -0.5rem;
+}
+.slds-input__icon-group_right {
+  right: 0;
+  top: 50%;
+}
+.slds-input__icon-group_right .slds-input__icon_right {
+  right: 0.5rem;
+}
+.slds-input__icon-group_right .slds-input__spinner {
+  right: 1.5rem;
+  left: auto;
+}
+.slds-input-has-fixed-addon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slds-has-error .slds-input {
+  border-color: #ea001e;
+  -webkit-box-shadow: #ea001e 0 0 0 1px inset;
+  box-shadow: #ea001e 0 0 0 1px inset;
+  background-color: var(--sds-c-input-color-background, white);
+  color: var(--sds-c-input-text-color);
+  background-clip: padding-box;
+}
+.slds-has-error .slds-input:focus,
+.slds-has-error .slds-input:active {
+  border-color: #ea001e;
+  -webkit-box-shadow: #ea001e 0 0 0 1px inset, 0 0 3px #0176d3;
+  box-shadow: #ea001e 0 0 0 1px inset, 0 0 3px #0176d3;
+}
+
+.slds-has-error .slds-input__icon {
+  fill: #ea001e;
+  color: #ea001e;
+}

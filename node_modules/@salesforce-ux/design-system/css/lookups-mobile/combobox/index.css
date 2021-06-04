@@ -1,0 +1,35 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-mobile-combobox {
+  display: block;
+}
+.slds-mobile-combobox__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slds-mobile-combobox__header-has-icon {
+  position: relative;
+}
+.slds-mobile-combobox__header-has-icon .slds-mobile-combobox__addon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+.slds-mobile-combobox__addon {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.slds-mobile-combobox__input {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.slds-mobile-combobox__input .slds-input {
+  line-height: 2.625rem;
+  font-size: 1rem;
+}

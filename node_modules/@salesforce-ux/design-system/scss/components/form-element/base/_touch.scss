@@ -1,0 +1,45 @@
+// Lightning Design System 2.15.8
+.slds-form-element__label {
+  @include flex-vertical-center(inline-flex);
+  min-height: $height-tappable-small;
+  padding-top: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+  font-size: $font-size-4;
+}
+
+// This is a workaround for our current DOM structure and dealing with custom elements, it's not perfect
+// but it's a solution that doesn't require CSS combinators and works within our limits. Issue cropped
+// up with our help icon next to a label.
+.slds-form-element__icon .slds-button_icon {
+  // Resize height of our button icons in form elements...
+  height: $height-tappable-small;
+
+  // ...unless that icon is being used in a form control and should have a larger tap target
+  .slds-form-element__control & {
+    height: $height-tappable;
+  }
+}
+
+.slds-form-element__icon {
+  padding-top: 0; // Padding deprecated with increased touch target area size
+}
+
+.slds-form-element_edit,
+.slds-form-element--edit {
+
+  .slds-form-element__static {
+    width: calc(100% - #{$square-tappable});
+  }
+}
+
+.slds-form-element_readonly {
+
+  .slds-icon {
+    @include square($square-tappable-x-small);
+  }
+}
+
+.slds-form-element__static {
+  font-size: $font-size-5;
+}

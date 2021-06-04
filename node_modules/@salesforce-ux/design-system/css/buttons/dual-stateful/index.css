@@ -1,0 +1,36 @@
+/*! Lightning Design System 2.15.8 */
+@charset "UTF-8";
+.slds-button_dual-stateful {
+}
+.slds-button_dual-stateful .slds-text-not-pressed {
+  display: block;
+}
+.slds-button_dual-stateful .slds-text-pressed {
+  display: none;
+}
+.slds-button_dual-stateful.slds-is-pressed {
+  padding-left: var(--sds-c-button-brand-spacing-inline-start, 1rem);
+  padding-right: var(--sds-c-button-brand-spacing-inline-end, 1rem);
+  text-align: center;
+  vertical-align: middle;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: border 0.15s linear;
+  transition: border 0.15s linear;
+  background-color: var(--sds-c-button-brand-color-background, #0176d3);
+  border-color: var(--sds-c-button-brand-color-border, #0176d3);
+  color: var(--sds-c-button-brand-text-color, white);
+}
+.slds-button_dual-stateful.slds-is-pressed:focus,
+.slds-button_dual-stateful.slds-is-pressed:hover {
+  background-color: var(--sds-c-button-brand-color-background-hover, #014486);
+  border-color: var(--sds-c-button-brand-color-border-hover, #014486);
+  color: var(--sds-c-button-brand-text-color-hover, white);
+}
+.slds-button_dual-stateful.slds-is-pressed .slds-text-not-pressed {
+  display: none;
+}
+.slds-button_dual-stateful.slds-is-pressed .slds-text-pressed {
+  display: block;
+}
